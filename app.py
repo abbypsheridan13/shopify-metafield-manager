@@ -2,6 +2,7 @@ import requests
 import time
 from flask import Flask, jsonify
 import os 
+from dotenv import load_dotenv
 
 app = Flask(__name__)
 
@@ -10,6 +11,7 @@ api_version = "2025-04"
 store_name = "Test Aviator Nation"
 shopify_token = os.getenv("SHOPIFY_ACCESS_TOKEN")
 
+load_dotenv()
 
 # Target Settings (same as your script)
 target_settings = {
