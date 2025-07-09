@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, redirect
 import os
 from dotenv import load_dotenv
 import requests
+from urllib.parse import urlencode
 from metafields_manager import run_metafield_updates
 
 load_dotenv()
@@ -28,7 +29,13 @@ def auth():
     if not shop:
         return "Missing shop param", 400
 
-    redirect_url = f"https://{shop}/admin/oauth/authorize?client_id={SHOPIFY_API_KEY}&scope={SCOPES}&redirect_uri={REDIRECT_URI}"
+    params = {
+        "client_id": SHOPIFY_API_KEY,
+        "scope": SCOPES,
+        "redirect_uri": REDIRECT_URI,
+    }
+    query_string = urlencode(params)
+    redirect_url = f"https://{shop}/admin/oauth/authorize?{query_string}"
     return redirect(redirect_url)
 
 @app.route("/auth/callback")
