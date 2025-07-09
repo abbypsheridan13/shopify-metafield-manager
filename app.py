@@ -13,14 +13,14 @@ app = Flask(__name__)
 def home():
     return render_template("index.html")
 
-@app.route("/run-update", methods=["GET"])
+@app.route("/run-update", methods=["POST"])
 def trigger_update():
     run_metafield_updates()
     return "Metafield updates complete!"
 
 SHOPIFY_API_KEY = os.getenv("SHOPIFY_API_KEY")
 SHOPIFY_API_SECRET = os.getenv("SHOPIFY_API_SECRET")
-SCOPES = os.getenv("SCOPES", "read_products,write_products")
+SCOPES = os.getenv("SCOPES", "read_products, write_products")
 REDIRECT_URI = os.getenv("REDIRECT_URI")
 
 @app.route("/auth")
