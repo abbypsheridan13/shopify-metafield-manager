@@ -7,9 +7,9 @@ from dotenv import load_dotenv
 app = Flask(__name__)
 
 # Shopify API Configuration
-api_version = "2025-04"
-store_name = "Test Aviator Nation"
-shopify_token = os.getenv("SHOPIFY_ACCESS_TOKEN")
+api_version = os.getenv("API_VERSION")
+store_name = os.getenv("STORE_NAME")
+access_token = os.getenv("ACCESS_TOKEN")
 
 load_dotenv()
 
@@ -52,7 +52,7 @@ target_settings = {
 }
 
 headers = {
-    "X-Shopify-Access-Token": shopify_token,
+    "X-Shopify-Access-Token": access_token,
     "Content-Type": "application/json"
 }
 
@@ -215,5 +215,8 @@ def run_update():
     except Exception as e:
         return jsonify({"status": "error", "message": str(e)}), 500
 
+import os
+
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
+
