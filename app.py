@@ -15,8 +15,9 @@ def home():
 
 @app.route("/run-update", methods=["POST"])
 def trigger_update():
-    run_metafield_updates()
-    return "Metafield updates complete!"
+    # Start update in background thread or task queue (like Celery, RQ, or just threading)
+    start_background_update()
+    return "Update started! Check logs for progress."
 
 SHOPIFY_API_KEY = os.getenv("SHOPIFY_API_KEY")
 SHOPIFY_API_SECRET = os.getenv("SHOPIFY_API_SECRET")
