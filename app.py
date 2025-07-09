@@ -4,7 +4,12 @@ from dotenv import load_dotenv
 import requests
 from urllib.parse import urlencode
 from metafields_manager import run_metafield_updates
+import threading
 
+def start_background_update():
+    thread = threading.Thread(target=run_metafield_updates)
+    thread.start()
+    
 load_dotenv()
 
 app = Flask(__name__)
