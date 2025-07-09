@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 import os
 from dotenv import load_dotenv
 from metafields_manager import run_metafield_updates
@@ -9,7 +9,8 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return "Shopify Metafield Manager is running."
+    return render_template("index.html")  # looks for templates/index.html
+
 
 @app.route("/run-update", methods=["GET"])
 def trigger_update():
