@@ -34,14 +34,32 @@ def safe_request(method, url, **kwargs):
 
 target_settings = {
     "types": {
-        "hoodie": [
+        # "hoodie": [
+        #     {"metafield_key": "male_model_size", "size_display_name": "L"},
+        #     {"metafield_key": "female_model_size", "size_display_name": "XS"}
+        # ],
+        # "sweatshirt": [
+        #     {"metafield_key": "male_model_size", "size_display_name": "L"},
+        #     {"metafield_key": "female_model_size", "size_display_name": "XS"}
+        # ],
+        "destination hoodie": [
+            {"metafield_key": "male_model_size", "size_display_name": "L"},
+            {"metafield_key": "female_model_size", "size_display_name": "XS"}
+            ],
+        "destination sweatshirt": [
             {"metafield_key": "male_model_size", "size_display_name": "L"},
             {"metafield_key": "female_model_size", "size_display_name": "XS"}
         ],
-        "sweatshirt": [
+        "destination tees": [
             {"metafield_key": "male_model_size", "size_display_name": "L"},
             {"metafield_key": "female_model_size", "size_display_name": "XS"}
         ],
+        "destination men's sweatpants": [{"metafield_key": "male_model_size", "size_display_name": "L"}],
+        "destination women's sweatpants": [{"metafield_key": "female_model_size", "size_display_name": "XS"}],
+        "women's sweatpants": [{"metafield_key": "female_model_size", "size_display_name": "S"}],
+        "men's sweatpants": [{"metafield_key": "male_model_size", "size_display_name": "M"}],
+        "destination BF tee": [{"metafield_key": "female_model_size", "size_display_name": "S"}],
+        "boyfriend tee": [{"metafield_key": "female_model_size", "size_display_name": "S"}],
         "men's sweatshorts": [{"metafield_key": "male_model_size", "size_display_name": "L"}],
         "men's board shorts": [{"metafield_key": "male_model_size", "size_display_name": "32"}],
         "sports bra": [{"metafield_key": "female_model_size", "size_display_name": "XS"}],
