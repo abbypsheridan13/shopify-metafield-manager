@@ -32,7 +32,6 @@ def safe_request(method, url, **kwargs):
             return response
     raise Exception("Too many retries — giving up.")
 
-# Target Settings (unchanged, truncated for brevity)
 target_settings = {
     "types": {
         "hoodie": [
@@ -139,6 +138,10 @@ def delete_metafield(metafield_id):
         print(f"Failed to delete metafield ID {metafield_id}: {resp.status_code}")
 
 def run_metafield_updates():
+    print("target_settings type:", type(target_settings))
+    print("target_settings['types'] type:", type(target_settings.get("types")))
+    print("target_settings['tags'] type:", type(target_settings.get("tags")))
+
     size_name_to_id = {}
     for section in ["types", "tags"]:
         for settings in target_settings[section].values():
