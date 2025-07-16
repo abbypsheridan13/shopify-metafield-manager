@@ -58,7 +58,7 @@ target_settings = {
         "destination women's sweatpants": [{"metafield_key": "female_model_size", "size_display_name": "XS"}],
         "women's sweatpants": [{"metafield_key": "female_model_size", "size_display_name": "S"}],
         "men's sweatpants": [{"metafield_key": "male_model_size", "size_display_name": "M"}],
-        "destination BF tee": [{"metafield_key": "female_model_size", "size_display_name": "S"}],
+        "destination BF tees": [{"metafield_key": "female_model_size", "size_display_name": "S"}],
         "boyfriend tee": [{"metafield_key": "female_model_size", "size_display_name": "S"}],
         "men's sweatshorts": [{"metafield_key": "male_model_size", "size_display_name": "L"}],
         "men's board shorts": [{"metafield_key": "male_model_size", "size_display_name": "32"}],
