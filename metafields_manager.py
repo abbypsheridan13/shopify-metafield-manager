@@ -33,7 +33,42 @@ def safe_request(method, url, **kwargs):
     raise Exception("Too many retries — giving up.")
 
 # Target Settings (unchanged, truncated for brevity)
-target_settings = { ... }  # Keep your existing target_settings dict here
+target_settings = {
+    "types": {
+        "hoodie": [
+            {"metafield_key": "male_model_size", "size_display_name": "L"},
+            {"metafield_key": "female_model_size", "size_display_name": "XS"}
+        ],
+        "sweatshirt": [
+            {"metafield_key": "male_model_size", "size_display_name": "L"},
+            {"metafield_key": "female_model_size", "size_display_name": "XS"}
+        ],
+        "men's sweatshorts": [{"metafield_key": "male_model_size", "size_display_name": "L"}],
+        "men's board shorts": [{"metafield_key": "male_model_size", "size_display_name": "32"}],
+        "sports bra": [{"metafield_key": "female_model_size", "size_display_name": "XS"}],
+        "leggings": [{"metafield_key": "female_model_size", "size_display_name": "XS"}],
+        "women's active shorts": [{"metafield_key": "female_model_size", "size_display_name": "XS"}],
+        "women's board shorts": [{"metafield_key": "female_model_size", "size_display_name": "S"}],
+        "women's jogger shorts": [{"metafield_key": "female_model_size", "size_display_name": "S"}],
+        "women's shorts": [{"metafield_key": "female_model_size", "size_display_name": "S"}],
+        "swim": [{"metafield_key": "female_model_size", "size_display_name": "XS"}],
+        "polo": [{"metafield_key": "male_model_size", "size_display_name": "L"}],
+        "men's tank": [{"metafield_key": "male_model_size", "size_display_name": "L"}],
+        "women's tank": [{"metafield_key": "female_model_size", "size_display_name": "XS"}],
+        "denim shorts": [{"metafield_key": "female_model_size", "size_display_name": "24"}],
+        "women's jeans": [{"metafield_key": "female_model_size", "size_display_name": "24"}],
+        "men's jeans": [{"metafield_key": "male_model_size", "size_display_name": "32"}],
+        "women's outerwear": [{"metafield_key": "female_model_size", "size_display_name": "XS"}],
+        "men's outerwear": [{"metafield_key": "male_model_size", "size_display_name": "L"}],
+        "men's vest": [{"metafield_key": "male_model_size", "size_display_name": "L"}],
+        "women's vest": [{"metafield_key": "female_model_size", "size_display_name": "XS"}]
+    },
+    "tags": {
+        ("cropped crew sweatshirt",): [{"metafield_key": "female_model_size", "size_display_name": "XS"}],
+        ("relaxed pullover hoodie", "cropped hoodie"): [{"metafield_key": "female_model_size", "size_display_name": "XS"}],
+        ("jogger jean short",): [{"metafield_key": "female_model_size", "size_display_name": "XS"}]
+    }
+}
 
 def get_metaobject_id(display_name):
     url = f"https://{store_name}.myshopify.com/admin/api/{api_version}/graphql.json"
